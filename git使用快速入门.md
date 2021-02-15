@@ -102,6 +102,10 @@ git init
 git clone git@github.com:huxuyf/hello.git
 ```
 
+后面的地址是这么来的：
+
+![image-20210216010159116](git使用快速入门/image-20210216010159116.png)
+
 克隆Github上的仓库，既能是自己的仓库，也能是别人的仓库。两者的区别是，自己的仓库如果有修改，可以提交上去，而如果是他人的仓库，需要进行pull request才行。
 
 
