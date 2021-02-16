@@ -4,6 +4,10 @@
 
 Git是一个开源的分布式版本控制系统。这个定义比较深奥。我主要是用来适配Github的。当然通过Github的网站也能使用，但通过git命令行模式感觉更方便一些。
 
+因为对于我个人使用来说，不太会遇到版本问题，与他人协作等问题，所以只会涉及到最简单的设置、提交、更新等操作。
+
+
+
 ## 一、Git的下载、安装
 
 [官网](https://git-scm.com/) 
@@ -17,16 +21,11 @@ Git是一个开源的分布式版本控制系统。这个定义比较深奥。�
 ### 1、设置用户名、邮箱
 
 ```bash
-git config --global user.name "your name"
-git config --global user.email "your_email@youremail.com"
-```
-
-引号内的内容是自定义，比如我的是：
-
-```bash
 git config --global user.name "ShingU"
 git config --global user.email "shingu@gmail.com"
 ```
+
+这是Github上的用户名和注册邮箱，用于连接Github的远程库。
 
 
 
@@ -43,7 +42,7 @@ git config --global -l
 #### 2.1 在本地生成SSH keys
 
 ```bash
-ssh-keygen -t rsa -C "your_email@youremail.com"
+ssh-keygen -t rsa -C "shingu@gmail.com"
 ```
 
 这里使用的是在Github上注册的邮箱地址。执行这条命令后会让你输入地址、密码，不用管，一路回车即可。
@@ -88,9 +87,9 @@ git config --global i18n.logoutputencoding utf-8
 
 ### 1、在本地创建仓库
 
-有两种方式：第一种是Github上还不存在的仓库，第二种是Github上已经存在仓库（可以是自己的，也可以是别人的）
+有两种方式：第一种是在本地初始化一个仓库（Github上还不存在的仓库），第二种是Github上已经存在仓库（可以是自己的，也可以是别人的）
 
-第一种方式（不常用）：
+第一种方式（不常用，知道即可）：
 
 ```bash
 git init
@@ -108,11 +107,13 @@ git clone git@github.com:huxuyf/hello.git
 
 克隆Github上的仓库，既能是自己的仓库，也能是别人的仓库。两者的区别是，自己的仓库如果有修改，可以提交上去，而如果是他人的仓库，需要进行pull request才行。
 
+对于他人的仓库，除了直接clone，也可以先fork到自己的用户名下，然后再clone。
+
 
 
 ### 2、修改、提交
 
-1. 添加文件
+1. add-添加文件
 
 ![image-20210216001857816](git使用快速入门/image-20210216001857816.png)
 
@@ -126,7 +127,7 @@ git add "添加的文件名"
 git add .
 ```
 
-2. 提交文件
+2. commit-提交文件
 
 ![image-20210216002052263](git使用快速入门/image-20210216002052263.png)
 
@@ -136,7 +137,7 @@ git commit -m "第一次提交"
 
 -m 指的是备注信息（message的简写）
 
-3. 推送文件到远程仓库
+3. push-上传文件到远程仓库
 
 ![image-20210216002221663](git使用快速入门/image-20210216002221663.png)
 
@@ -162,12 +163,60 @@ git pull
 
 
 
-### 4、其他
-
-通过上面的演示，可以看到`git status`这个命令也很常用。
-
 ## 四、Git命令速查表
 
 ![Git](git使用快速入门/Git.png)
 
 ![Git学习](git使用快速入门/Git学习.jpg)
+
+## 五、小结
+
+### 1、一次性命令备忘
+
+以下命令为初始化、配置时使用，不会经常用到，但一定得知道：
+
+``` bash
+# 本地设置Github的用户名、邮箱
+git config --global user.name "ShingU"
+git config --global user.email "shingu@gmail.com"
+
+# 用于避免出现中文乱码的情况
+git config --global core.quotepath false
+git config --global i18n.commitencoding utf-8
+git config --global i18n.logoutputencoding utf-8
+
+# 查看git的全局设置
+git config --global -l
+
+# 生成SSH keys
+ssh-keygen -t rsa -C "shingu@gmail.com"
+# 验证通过SSH连接是否成功
+ssh -T git@github.com
+
+```
+
+
+
+### 2、常用命令
+
+```bash
+# 克隆远程仓库
+git clone git@github.com:huxuyf/hello.git
+
+# 添加所有变更的文件
+git add .
+# 提交文件
+git commit -m "第一次提交"
+# 上传到远程库
+git push
+
+# 将远程库的变动同步到本地库
+git pull
+
+# 查看本地库的状态
+git status
+
+# 查看远程库的信息
+git remote -v
+```
+
