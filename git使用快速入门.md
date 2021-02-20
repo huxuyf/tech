@@ -220,3 +220,33 @@ git status
 git remote -v
 ```
 
+
+
+## 六、高级篇
+
+### 一、分支篇
+
+**查看分支：git branch**
+
+![image-20210216221448314](git使用快速入门/image-20210216221448314.png)
+
+**创建分支：git branch <name>**
+
+
+
+**切换分支：git checkout <name>**
+git checkout dev	# 切换到dev分支
+git checkout main	# 切换到主分支
+
+
+
+**创建+切换分支：git checkout -b <name>**
+
+![image-20210216221507366](git使用快速入门/image-20210216221507366.png)
+
+**合并分支：git merge <name>**
+git merge dev	# 合并dev分支到主分支
+
+
+
+**删除分支：git branch -d <name>**
