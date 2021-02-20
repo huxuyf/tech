@@ -78,6 +78,12 @@
 
 
 
+**验证图片上传选项**
+
+![验证成功](https://cdn.jsdelivr.net/gh/huxuyf/images/20210220193259.png)
+
+
+
 ## 二、使用PicGo
 
 ### 1、快捷键上传（推荐）
@@ -87,6 +93,10 @@
 **注：单次只能上传一张图片。**
 
 
+
+**上传成功**
+
+![上传成功](https://cdn.jsdelivr.net/gh/huxuyf/images/20210220193416.png)
 
 ### 2、界面上传
 

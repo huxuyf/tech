@@ -178,7 +178,7 @@ git pull
 
 ![Git](git使用快速入门/Git.png)
 
-![Git学习](git使用快速入门/Git学习.jpg)
+
 
 ## 五、小结
 
@@ -195,6 +195,9 @@ git config --global user.email "shingu@gmail.com"
 git config --global core.quotepath false
 git config --global i18n.commitencoding utf-8
 git config --global i18n.logoutputencoding utf-8
+
+# 默认创建的分支名为main
+git config --global init.defaultBranch main
 
 # 查看git的全局设置
 git config --global -l
@@ -241,6 +244,12 @@ git remote -v
 
 ![image-20210216221448314](git使用快速入门/image-20210216221448314.png)
 
+`git branch`仅可以查看本地的分支，`git branch -a`除了本地，还能看到远程的分支
+
+![](https://cdn.jsdelivr.net/gh/huxuyf/images/20210221000226.png)
+
+
+
 **创建分支：git branch <name>**
 
 
@@ -255,9 +264,26 @@ git checkout main	# 切换到主分支
 
 ![image-20210216221507366](git使用快速入门/image-20210216221507366.png)
 
+
+
 **合并分支：git merge <name>**
 git merge dev	# 合并dev分支到主分支
 
 
 
 **删除分支：git branch -d <name>**
+
+
+
+**删除远程分支：git push origin -d <name>**
+
+![](https://cdn.jsdelivr.net/gh/huxuyf/images/20210221000255.png)
+
+
+
+> GitHub默认创建的分支名为`main`，而git初始化仓库时默认的分支名还是`master`，所以需要修改git配置。
+
+```bash
+git config --global init.defaultBranch main
+```
+
