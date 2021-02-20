@@ -69,6 +69,17 @@ ssh-keygen -t rsa -C "shingu@gmail.com"
 ssh -T git@github.com
 ```
 
+#### 2.4 SSH无法连接的问题
+在单位电脑上使用，出现了`ssh: connect to host github.com port 22: Connection timed out`这个错误。经研究发现是公司禁用了22端口。根据网上的教程，修改**ssh_config**文件，添加如下代码即可：
+```bash
+Host github.com
+User git
+Hostname ssh.github.com
+PreferredAuthentications publickey
+IdentityFile ~/.ssh/id_rsa
+Port 443
+```
+保存后，还需进行`ssh -T git@github.com`，需要输入`yes`
 
 
 ### 3、解决中文乱码问题
