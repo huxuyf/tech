@@ -189,7 +189,7 @@ git pull
 
 ![Git](https://cdn.jsdelivr.net/gh/huxuyf/images/20210222145106.png)
 
-
+![Git学习](https://cdn.jsdelivr.net/gh/huxuyf/images/20210222193424.jpg)
 
 ## 五、小结
 
