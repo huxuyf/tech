@@ -55,13 +55,13 @@ ssh-keygen -t rsa -C "shingu@gmail.com"
 
 打开Github网站，并在个人设置中找到**SSH and GPG keys**
 
-![image-20210216000434269](git使用快速入门/image-20210216000434269.png)
+![image-20210216000434269](https://cdn.jsdelivr.net/gh/huxuyf/images/20210222145000.png)
 
-![image-20210216000457859](git使用快速入门/image-20210216000457859.png)
+![image-20210216000457859](https://cdn.jsdelivr.net/gh/huxuyf/images/20210222145008.png)
 
 点击新建SSH keys，将之前**id_rsa.pub**文件用记事本打开，并将里面的内容复制进去
 
-![image-20210216000703120](git使用快速入门/image-20210216000703120.png)
+![image-20210216000703120](https://cdn.jsdelivr.net/gh/huxuyf/images/20210222145015.png)
 
 #### 2.3 验证是否成功
 
@@ -70,16 +70,27 @@ ssh -T git@github.com
 ```
 
 #### 2.4 SSH无法连接的问题
-在单位电脑上使用，出现了`ssh: connect to host github.com port 22: Connection timed out`这个错误。经研究发现是公司禁用了22端口。根据网上的教程，修改**ssh_config**文件，添加如下代码即可：
+在单位电脑上使用，出现了`ssh: connect to host github.com port 22: Connection timed out`这个错误。经研究发现是公司禁用了22端口。根据网上的教程，修改**ssh_config**（路径：`C:\Program Files\Git\etc\ssh\ssh_config`）文件，添加如下代码即可：
 ```bash
 Host github.com
-User git
 Hostname ssh.github.com
 PreferredAuthentications publickey
 IdentityFile ~/.ssh/id_rsa
 Port 443
 ```
 保存后，还需进行`ssh -T git@github.com`，需要输入`yes`
+
+如果使用的是Gitee，则添加如下代码：
+
+```
+Host gitee.com
+Hostname gitee.com
+PreferredAuthentications publickey
+IdentityFile ~/.ssh/gitee_id_rsa
+Port 443
+```
+
+
 
 
 ### 3、解决中文乱码问题
@@ -114,7 +125,7 @@ git clone git@github.com:huxuyf/hello.git
 
 后面的地址是这么来的：
 
-![image-20210216010159116](git使用快速入门/image-20210216010159116.png)
+![image-20210216010159116](https://cdn.jsdelivr.net/gh/huxuyf/images/20210222145027.png)
 
 克隆Github上的仓库，既能是自己的仓库，也能是别人的仓库。两者的区别是，自己的仓库如果有修改，可以提交上去，而如果是他人的仓库，需要进行pull request才行。
 
@@ -126,7 +137,7 @@ git clone git@github.com:huxuyf/hello.git
 
 1. add-添加文件
 
-![image-20210216001857816](git使用快速入门/image-20210216001857816.png)
+![image-20210216001857816](https://cdn.jsdelivr.net/gh/huxuyf/images/20210222145035.png)
 
 ```bash
 git add "添加的文件名"
@@ -140,7 +151,7 @@ git add .
 
 2. commit-提交文件
 
-![image-20210216002052263](git使用快速入门/image-20210216002052263.png)
+![image-20210216002052263](https://cdn.jsdelivr.net/gh/huxuyf/images/20210222145044.png)
 
 ```bash
 git commit -m "第一次提交"
@@ -150,7 +161,7 @@ git commit -m "第一次提交"
 
 3. push-上传文件到远程仓库
 
-![image-20210216002221663](git使用快速入门/image-20210216002221663.png)
+![image-20210216002221663](https://cdn.jsdelivr.net/gh/huxuyf/images/20210222145052.png)
 
 ```bash
 git push
@@ -158,7 +169,7 @@ git push
 
 Github上的效果：
 
-![image-20210216002514261](git使用快速入门/image-20210216002514261.png)
+![image-20210216002514261](https://cdn.jsdelivr.net/gh/huxuyf/images/20210222145056.png)
 
 ### 3、更新本地仓库
 
@@ -170,13 +181,13 @@ git pull
 
 很简单，只需要执行这条命令即可。
 
-![image-20210216003305669](git使用快速入门/image-20210216003305669.png)
+![image-20210216003305669](https://cdn.jsdelivr.net/gh/huxuyf/images/20210222145101.png)
 
 
 
 ## 四、Git命令速查表
 
-![Git](git使用快速入门/Git.png)
+![Git](https://cdn.jsdelivr.net/gh/huxuyf/images/20210222145106.png)
 
 
 
@@ -242,7 +253,7 @@ git remote -v
 
 **查看分支：git branch**
 
-![image-20210216221448314](git使用快速入门/image-20210216221448314.png)
+![image-20210216221448314](https://cdn.jsdelivr.net/gh/huxuyf/images/20210222145158.png)
 
 `git branch`仅可以查看本地的分支，`git branch -a`除了本地，还能看到远程的分支
 
@@ -262,7 +273,7 @@ git checkout main	# 切换到主分支
 
 **创建+切换分支：git checkout -b <name>**
 
-![image-20210216221507366](git使用快速入门/image-20210216221507366.png)
+![image-20210216221507366](https://cdn.jsdelivr.net/gh/huxuyf/images/20210222145208.png)
 
 
 
