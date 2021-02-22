@@ -18,7 +18,13 @@
 
 ![image-20210221164440133](https://cdn.jsdelivr.net/gh/huxuyf/images/20210221164445.png)
 
-将【默认】值改为`Git Bash Here`，这是右键菜单中显示的**名称**。并新建一个`字符串值`，名称为`Icon`，数据为`git-for-windows.ico`的路径，这是右键菜单中显示的**图标**。
+将【默认】值改为`Git Bash Here`，这是右键菜单中显示的**名称**。
+
+并新建一个`字符串值`，名称为`Icon`，数据为`git-for-windows.ico`的路径，这是右键菜单中显示的**图标**。
+
+注：Icon也可以选择`git-bash.exe`的位置
+
+![](https://cdn.jsdelivr.net/gh/huxuyf/images/20210222093953.png)
 
 
 
