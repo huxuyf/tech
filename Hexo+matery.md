@@ -49,17 +49,21 @@ npm install
 
 ```bash
 npm install hexo-generator-search --save
-npm i hexo-permalink-pinyin --save
+# npm i hexo-permalink-pinyin --save
+npm install hexo-abbrlink --save
 npm i --save hexo-wordcount
 npm install hexo-generator-feed --save
 ```
 
 1. 搜索功能；
-2. 中文链接转拼音；
-3. 文章字数统计；
-4. RSS订阅；
+2. 中文链接转拼音
+3. 永久链接的缩写
+4. 文章字数统计；
+5. RSS订阅；
 
 如果之前安装过prismjs，则需要卸载`npm uninstall hexo-prism-plugin`
+
+中文链接转拼音，决定取消，改用`hexo-abbrlink`这个插件。
 
 
 
