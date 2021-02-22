@@ -41,7 +41,9 @@ npm install <Module Name> -g
 
 ![](https://cdn.jsdelivr.net/gh/huxuyf/images/20210222161439.png)
 
+查看路径：
 
+![](https://gitee.com/huxuyf/images/raw/master/2021/02/20210222234115.png)
 
 ## 更新模块
 
